@@ -9,10 +9,13 @@
  *  zapewniających obszar działania robota
  */
 
-#include "Wektor.hh"
 #include <cmath>
-#include "Macierz.hh"
 #include <iostream>
+#include "Wektor.hh"
+#include "Macierz.hh"
+#include "Prost.hh"
+//#include "Robot.hh"
+
 
 /*!
  * \brief Klasa Scena
@@ -31,7 +34,7 @@ class Scena
      *  Tablica zawiera kolejne współrzędne wsceny.
      */
     
-        Scena(Wektor w5, Wektor w6, Wektor w7, Wektor w8); //w5-lewy dlony, w6-lewy gorny i dalej
+        Scena(Wektor w5, Wektor w6, Wektor w7, Wektor w8, Prost *przeszkody, int ilosc); //w5-lewy dlony, w6-lewy gorny i dalej
     
     /*!
      * \brief Konstruktor sceny bezparametryczny
@@ -44,6 +47,9 @@ class Scena
      */
     
         virtual ~Scena();
+    
+        bool poza_scena(Wektor punkt);
+        bool kolizja_z_przeszkoda(Wektor punkt);
 
     protected:
 
@@ -54,6 +60,9 @@ class Scena
      */
     
         Wektor wierz[4];
+        Prost *przeszkody;
+        //Robot *robot;
+        int ilosc;
 };
 
 #endif // SCENA_H

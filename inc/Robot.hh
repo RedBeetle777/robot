@@ -13,6 +13,7 @@
 #include <cmath>
 #include "Macierz.hh"
 #include "Scena.hh"
+#include "ObiektGraficzny.hh"
 
 /*!
  * \brief Klasa Robot
@@ -21,7 +22,7 @@
  *  pojęcie robota.
  */
 
-class Robot
+class Robot : public ObiektGraficzny
 {
     public:
     
@@ -31,7 +32,7 @@ class Robot
      *  Tablica zawiera kolejne współrzędne wektora.
      */
     
-        Robot(Wektor w1, Wektor w2, Wektor w3, Wektor w4, Wektor w5, Wektor w6); // w1 wierzcholek, idzie do lewej i w6 to srodek
+        Robot(Wektor w1, Wektor w2, Wektor w3, Wektor w4, Wektor w5, Wektor w6, Wektor w7); // w1 wierzcholek, idzie do lewej i w7 to srodek
     
     /*!
      * \brief Konstruktor robota bezparametryczny
@@ -83,7 +84,7 @@ class Robot
     /*!
      * \brief Tablica robota złożona z wektorów
      */
-        Wektor wierz[6];
+        Wektor wierz[7];
 };
 
 #endif // ROBOT_H
