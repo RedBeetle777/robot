@@ -12,7 +12,32 @@
 
 
 using namespace std;
+ObiektGraficzny::ObiektGraficzny(Wektor w1, Wektor w2, Wektor w3, Wektor w4, Wektor w5, Wektor w6, Wektor w7, Robot *roboty, int ilosc)
+{
+    wierz[0] = w1;
+    wierz[1] = w2;
+    wierz[2] = w3;
+    wierz[3] = w4;
+    wierz[4] = w5;
+    wierz[5] = w6;
+    wierz[6] = w7;
+    
+    this->roboty = new Robot[ilosc];
+    this->ilosc = ilosc;
+    
+    for (int i = 0; i < ilosc; i++)
+    {
+        this->roboty[i] = roboty[i];
+    }
+}
 
+ObiektGraficzny::ObiektGraficzny()
+{
+}
+
+ObiektGraficzny::~ObiektGraficzny()
+{
+}
 
 /*!
  * Przypisuje wartości współrzędnych poszczególnym wierzchołkom.

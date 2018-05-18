@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "Wektor.hh"
+#include "Robot.hh"
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -37,6 +38,11 @@ class ObiektGraficzny {
                             // Tu należy użyć szablonu wektor.
 
   public:
+    ObiektGraficzny(Wektor w1, Wektor w2, Wektor w3, Wektor w4, Wektor w5, Wektor w6, Wektor w7, Robot *roboty, int ilosc);
+    
+    ObiektGraficzny();
+    
+    virtual ~ObiektGraficzny();
   /*!
    * \brief Inicjalizacja współrzędnych wierzchołków
    */
